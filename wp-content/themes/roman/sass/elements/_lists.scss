@@ -3,7 +3,7 @@ ul, ol {
 }
 
 ul {
-	list-style: disc;
+	list-style: none;
 }
 
 ol {
@@ -22,4 +22,31 @@ dt {
 
 dd {
 	margin: 0 1.5em 1.5em;
+}
+
+// TAXONOMY LISTS AND LIST ITEMS
+ul.taxonomyList {
+	list-style: none;
+	text-align: center;
+	li{
+		padding: 15px 0;
+	}
+	span {
+		display: block;
+	}
+	// TAXONOMY IMAGES
+
+	img {
+		width: 80px;
+	}
+
+	a {
+		transition: all 0.25s;
+		filter:  grayscale(1) brightness(5);
+		&:hover {
+			// transform: scale(1.25);
+			filter:  grayscale(0) brightness(1);
+			color: #332222;
+		}
+	}
 }

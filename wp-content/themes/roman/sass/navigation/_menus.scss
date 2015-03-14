@@ -1,21 +1,23 @@
-.headerContainer {
-	background:mistyrose;
+header{
+	background:white;
 	width: 100%;
+	border-bottom: 3px solid #322;
+}
+
+.headerContainer {
+	@include pageWidth;
+	margin: 0 auto;
 	height: 60px;
-	padding: 10px;
-	letter-spacing: 0.125em;
-	border-bottom: 4px solid #323;
 	h1{
 		display: inline;
 		float: left;
 		padding: 0;
 		margin: 5px 0 0 0;
-		font-size: 1.2em;
-
 	}
 } 
 
 ul#menu-main-menu {
+	padding-top: 10px;
 	list-style: none;
 	position: relative;
 	float: right;

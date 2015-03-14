@@ -1,4 +1,21 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	text-transform: uppercase;
 }
+
+h1 {
+	font-size: 1.75em;
+}
+
+h1, h2 {
+	text-transform: uppercase;
+	font-family: "Lato";
+	letter-spacing: 0.055em;
+	font-weight: 400;
+}
+
+h3 {
+	font-family: "Playfair Display";
+	font-style: italic;
+	font-weight: 400;
+}
+

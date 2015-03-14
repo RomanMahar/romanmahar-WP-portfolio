@@ -44,50 +44,56 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 1.0 Normalize
 --------------------------------------------------------------*/
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
-
-body {
-  margin: 0; }
-
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }
 
-audio, canvas, progress, video {
-  display: inline-block;
-  vertical-align: baseline; }
+audio, canvas, video {
+  display: inline-block; }
 
 audio:not([controls]) {
   display: none;
   height: 0; }
 
-[hidden], template {
+[hidden] {
   display: none; }
 
-a {
-  background-color: transparent; }
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+a:focus {
+  outline: thin dotted; }
 
 a:active, a:hover {
   outline: 0; }
+
+h1 {
+  font-size: 2em; }
 
 abbr[title] {
   border-bottom: 1px dotted; }
 
 b, strong {
-  font-weight: bold; }
+  font-weight: 700; }
 
 dfn {
   font-style: italic; }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
 mark {
   background: #ff0;
   color: #000; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: \201C \201D \2018 \2019; }
 
 small {
   font-size: 80%; }
@@ -99,10 +105,10 @@ sub, sup {
   vertical-align: baseline; }
 
 sup {
-  top: -0.5em; }
+  top: -.5em; }
 
 sub {
-  bottom: -0.25em; }
+  bottom: -.25em; }
 
 img {
   border: 0; }
@@ -110,79 +116,50 @@ img {
 svg:not(:root) {
   overflow: hidden; }
 
-figure {
-  margin: 1em 40px; }
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
 
-hr {
-  box-sizing: content-box;
-  height: 0; }
-
-pre {
-  overflow: auto; }
-
-code, kbd, pre, samp {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-button, input, optgroup, select, textarea {
-  color: inherit;
-  font: inherit;
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
   margin: 0; }
 
-button {
-  overflow: visible; }
+button, input {
+  line-height: normal; }
 
-button, select {
-  text-transform: none; }
-
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+button, html input[type=button], input[type=reset], input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer; }
 
-button[disabled], html input[disabled] {
+button[disabled], input[disabled] {
   cursor: default; }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-
-input {
-  line-height: normal; }
-
-input[type="checkbox"], input[type="radio"] {
+input[type=checkbox], input[type=radio] {
   box-sizing: border-box;
   padding: 0; }
 
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
-  height: auto; }
-
-input[type="search"] {
+input[type=search] {
   -webkit-appearance: textfield;
   box-sizing: content-box; }
 
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
-legend {
-  border: 0;
-  padding: 0; }
-
 textarea {
-  overflow: auto; }
-
-optgroup {
-  font-weight: bold; }
+  overflow: auto;
+  vertical-align: top; }
 
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-td, th {
+body, figure {
+  margin: 0; }
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
   padding: 0; }
 
 .clearfix:after {
@@ -192,6 +169,9 @@ td, th {
   content: " ";
   clear: both;
   height: 0; }
+
+* {
+  box-sizing: border-box; }
 
 /*--------------------------------------------------------------
 2.0 Typography
@@ -204,8 +184,24 @@ body, button, input, select, textarea {
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both;
-  text-transform: uppercase; }
+  clear: both; }
+
+h1 {
+  font-size: 1.75em; }
+
+h1, h2 {
+  text-transform: uppercase;
+  font-family: "Lato";
+  letter-spacing: 0.055em;
+  font-weight: 400; }
+
+h3 {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 400; }
+
+body {
+  font-family: "Lato", "Myriad Pro", "Sans serif"; }
 
 p {
   margin-bottom: 1.5em; }
@@ -271,11 +267,16 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
+.main {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px; }
+
 ul, ol {
   margin: 0 0 1.5em 3em; }
 
 ul {
-  list-style: disc; }
+  list-style: none; }
 
 ol {
   list-style: decimal; }
@@ -290,6 +291,25 @@ dt {
 dd {
   margin: 0 1.5em 1.5em; }
 
+ul.taxonomyList {
+  list-style: none;
+  text-align: center; }
+  ul.taxonomyList li {
+    padding: 15px 0; }
+  ul.taxonomyList span {
+    display: block; }
+  ul.taxonomyList img {
+    width: 80px; }
+  ul.taxonomyList a {
+    -webkit-transition: all 0.25s;
+            transition: all 0.25s;
+    -webkit-filter: grayscale(1) brightness(5);
+            filter: grayscale(1) brightness(5); }
+    ul.taxonomyList a:hover {
+      -webkit-filter: grayscale(0) brightness(1);
+              filter: grayscale(0) brightness(1);
+      color: #332222; }
+
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
@@ -299,6 +319,38 @@ img {
 table {
   margin: 0 0 1.5em;
   width: 100%; }
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  width: 60%;
+  list-style: none;
+  text-align: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
+.flex-item {
+  padding: 0;
+  width: 200px;
+  margin-top: 20px;
+  font-weight: bold; }
+
+div.images {
+  width: 50%;
+  margin: 0;
+  text-align: center; }
+
+figure.image {
+  width: 40%;
+  display: inline-block;
+  float: left; }
 
 /*--------------------------------------------------------------
 4.0 Forms
@@ -344,7 +396,9 @@ textarea {
 --------------------------------------------------------------*/
 a {
   text-decoration: none;
-  color: #231F20; }
+  color: #231F20;
+  -webkit-transition: all 0.2s;
+          transition: all 0.2s; }
   a:visited {
     color: #231F20; }
   a:hover, a:focus, a:active {
@@ -357,21 +411,24 @@ a {
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-.headerContainer {
-  background: mistyrose;
+header {
+  background: white;
   width: 100%;
-  height: 60px;
-  padding: 10px;
-  letter-spacing: 0.125em;
-  border-bottom: 4px solid #323; }
+  border-bottom: 3px solid #322; }
+
+.headerContainer {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px; }
   .headerContainer h1 {
     display: inline;
     float: left;
     padding: 0;
-    margin: 5px 0 0 0;
-    font-size: 1.2em; }
+    margin: 5px 0 0 0; }
 
 ul#menu-main-menu {
+  padding-top: 10px;
   list-style: none;
   position: relative;
   float: right;

@@ -7,49 +7,52 @@
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
         <h2><?php the_title(); ?></h2>
-        <p><strong>Client name:</strong> <?php the_field('client_name'); ?></p>
+        <h3><strong>Project link:</strong> <a href="<?php the_field('project_link'); ?>"><?php the_field('project_link'); ?></a> </h3>
         <p><?php the_field('short_desc') ?></p> 
         
-        <div class="images">
-          <?php while(has_sub_field('images')) : ?>
+
+        <ul class="flex-container">
+          <?php while(have_rows('images')) : ?>
+            <?php the_row(); ?>
             <?php // for every image/caption combo, this code is run ?>
-            <figure>
+            <li class="flex-item">
               <?php $image = get_sub_field('image'); ?>
-              <img src="<?php echo $image['sizes']['square'] ?>">
+              <img class="portfolioImage" src="<?php echo $image['sizes']['square'] ?>" data-largeimage="<?php echo $image['sizes']['spotlight'] ?>">
               <figcaption><?php the_sub_field('caption'); ?></figcaption>
-            </figure>
+            </li>
           <?php endwhile; ?>  
-        </div>
+        </ul>
 
 
         <?php // post content ?>
         <?php the_content(); ?>
         
 
-
-        <ul>
+        <?php // BEGINNING OF TECHNOLOGIES UL ?>
+        <ul class="taxonomyList">
             <?php $taxonomyItems = get_the_terms($post->ID, 'technologies', '', ',', '');
 
             //performs one time for each taxonomy item
             foreach ($taxonomyItems as $taxonomyItem) {
+
+              $taxonomyPic = z_taxonomy_image_url($taxonomyItem->term_id);
+              // echo '<img src='.$taxonomyPic.'/>';
+
+              //
               $taxonomySlug = $taxonomyItem->slug;
               $taxonomyLink = $taxonomyItem->taxonomy;
-
-              $terms = apply_filters( 'taxonomy-images-get-terms', '' );
-              pre_r($terms);
-
-              // taxonomy image [NOT WORKING CURRENTLY]
-              // print apply_filters( 'taxonomy-images-queried-term-image', '' );
 
               // dynamically stores the site url and is appending the taxonomy and its items. http is a before argument
               $url = site_url( '/'.$taxonomyLink.'/'.$taxonomySlug, 'http' );
 
               // prints the taxonomy name (e.g jQuery) within an anchor tag that links to the url defined above it is all wrapped in a list item
-              echo '<li>'.'<a href='.$url.'>'.$taxonomyItem->name.'</a>'.'</li>';
+              echo '<li>'.'<a class=taxonomy href='.$url.'>'.'<img class=taxonomy src='.$taxonomyPic.'>'.'<br>'.$taxonomyItem->name.'</a>'.'</li>';
              };
             ?>
         </ul>
-        
+
+
+        <?php // NAVIGATIONS ARROWS TO PREV AND NEXT PAGES ?>
         <div id="nav-below" class="navigation">
           <p class="nav-previous"><?php previous_post_link('%link', '&larr; %title'); ?></p>
           <p class="nav-next"><?php next_post_link('%link', '%title &rarr;'); ?></p>

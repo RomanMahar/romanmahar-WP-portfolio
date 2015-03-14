@@ -21,3 +21,10 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+// page width content width
+
+@mixin pageWidth {
+	width: 90%;
+	max-width: 1200px;
+}

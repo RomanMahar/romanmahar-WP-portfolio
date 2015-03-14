@@ -1,7 +1,7 @@
 a {
 	text-decoration: none;
 	color: $color__link;
-
+	transition: all 0.2s;
 	&:visited {
 		color: $color__link-visited;
 	}
