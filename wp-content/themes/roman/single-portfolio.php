@@ -7,8 +7,10 @@
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
         <h2><?php the_title(); ?></h2>
+        <?php if (get_field('project_link')) : ?>
         <h3><strong>Project link:</strong> <a href="<?php the_field('project_link'); ?>"><?php the_field('project_link'); ?></a> </h3>
         <p><?php the_field('short_desc') ?></p> 
+        <?php endif; ?>
         
 
         <ul class="flex-container">
@@ -46,7 +48,7 @@
               $url = site_url( '/'.$taxonomyLink.'/'.$taxonomySlug, 'http' );
 
               // prints the taxonomy name (e.g jQuery) within an anchor tag that links to the url defined above it is all wrapped in a list item
-              echo '<li>'.'<a class=taxonomy href='.$url.'>'.'<img class=taxonomy src='.$taxonomyPic.'>'.'<br>'.$taxonomyItem->name.'</a>'.'</li>';
+              echo '<li>'.'<a class=taxonomy href='.$url.'>'.'<img class=taxonomy src='.$taxonomyPic.'>'.'<h6>'.$taxonomyItem->name.'</h6>'.'</a>'.'</li>';
              };
             ?>
         </ul>
@@ -54,8 +56,8 @@
 
         <?php // NAVIGATIONS ARROWS TO PREV AND NEXT PAGES ?>
         <div id="nav-below" class="navigation">
-          <p class="nav-previous"><?php previous_post_link('%link', '&larr; %title'); ?></p>
-          <p class="nav-next"><?php next_post_link('%link', '%title &rarr;'); ?></p>
+          <p class="nav-previous"><?php previous_post_link('%link', '<span class=arrow>'.'&larr;'.'</span>'.'<span class=navTitle>'.'%title'.'</span>'); ?></p>
+          <p class="nav-next"><?php next_post_link('%link', '<span class=arrow>'.'&rarr;'.'</span>'.'<span class=navTitle>'.'%title'.'</span>'); ?></p>
         </div><!-- #nav-below -->
 
       <?php endwhile; // end of the loop. ?>

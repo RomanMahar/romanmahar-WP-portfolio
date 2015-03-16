@@ -43,10 +43,17 @@ ul.taxonomyList {
 	a {
 		transition: all 0.25s;
 		filter:  grayscale(1) brightness(5);
+		h6 {
+			color: #aaa;
+			transition: all 0.25s;
+		}
 		&:hover {
 			// transform: scale(1.25);
-			filter:  grayscale(0) brightness(1);
-			color: #332222;
+			filter:  grayscale(1) brightness(1);
+			color: $color__primary;
+			h6 {
+				color: $color__primary;
+			}
 		}
 	}
 }

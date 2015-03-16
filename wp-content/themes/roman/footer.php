@@ -1,6 +1,29 @@
 <footer>
   <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <div id="footer-sidebar" class="secondary clearfix">
+	    <div id="footer-sidebar1">
+		    <?php
+		    if(is_active_sidebar('footer-sidebar-1')){
+		    dynamic_sidebar('footer-sidebar-1');
+		    echo '<h3>'.'&copy;'.' Omar Rahman '.date('Y').'</h3>';
+		    }
+		    ?>
+	    </div>
+	    <div id="footer-sidebar2">
+		    <?php
+		    if(is_active_sidebar('footer-sidebar-2')){
+		    dynamic_sidebar('footer-sidebar-2');
+		    }
+		    ?>
+	    </div>
+	    <div id="footer-sidebar3">
+		    <?php
+		    if(is_active_sidebar('footer-sidebar-3')){
+		    dynamic_sidebar('footer-sidebar-3');
+		    }
+		    ?>
+	    </div>
+    </div>
   </div>
 </footer>
 

@@ -19,7 +19,7 @@ gulp.task('styles', function() {
 
 gulp.task('browser-sync', function() {
 	browserSync({
-		server: { baseDir: "./" }
+		server: { 'localhost/romanmahar': "localhost/romanmahar" }
 	});
 });
 

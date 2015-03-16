@@ -2,6 +2,7 @@
 
 <div class="main">
   <div class="container">
+    <h2><?php post_type_archive_title(); ?></h2>
 
     <div class="content">
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -15,7 +16,6 @@
         <p><strong>Client name:</strong> <?php the_field('client_name'); ?></p>
 
         <?php the_terms($post->ID, 'technologies', '', 'X'); ?>
-        <?php  pre_r(get_the_terms($post->ID, 'technologies', '', 'X')); ?>
 
         <p><?php the_field('short_desc') ?></p> 
         

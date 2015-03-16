@@ -1,40 +1,130 @@
 header{
-	background:white;
+	background:rgba(255,255,255,0);
 	width: 100%;
-	border-bottom: 3px solid #322;
+	border-bottom: 1px solid white;
+	position: fixed;
+	top: 20px;
+	z-index: 9999;
+	transition: all 0.4s;
+}
+
+span.headerBG{
+	background: $color__primary;
+	width: 100%;
+	height: 133px;
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index: -9999;
+	display: block;
+	transition: all 0.2s;
+}
+
+span.headerBG.scrollin{
+	opacity: 0;
 }
 
 .headerContainer {
 	@include pageWidth;
 	margin: 0 auto;
-	height: 60px;
-	h1{
+	padding: 10px 0;
+	transition: all 0.4s;
+	h1 a{
 		display: inline;
 		float: left;
-		padding: 0;
+		padding: 10px 0 0 0;
 		margin: 5px 0 0 0;
+		transition: all 0.4s;
+		color: white;
 	}
 } 
 
+header.scrollin{
+	padding: 10px 0 0 0;
+	margin: 0;
+	animation: headerShift 0.4s;
+	top: 0;
+	background: rgba(255,255,255,1);
+	border-bottom: 1px solid $color__primary;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	.headerContainer {
+		padding: 5px 0;
+		h1 a{
+			color: $color__primary;
+			font-size: 0.6em;
+			font-weight: 700;
+			display: inline;
+			float: left;
+			line-height: 0;
+			padding: 10px 0 0 0;
+			margin: 10px 0 0 0;
+		}
+		ul#menu-main-menu {
+			padding-top: 5px;
+			margin-bottom: 5px;
+			a{
+				color: $color__primary;
+				&:hover{
+					color: white;
+				}
+			}
+		}
+	} 
+}
+
+@keyframes headerShift {
+  0%   { top: 20px; }
+  100% { top: 0px;}
+}
+
+
+
 ul#menu-main-menu {
-	padding-top: 10px;
+	padding-top: 25px;
 	list-style: none;
 	position: relative;
 	float: right;
-	margin-right: 40px;
-	li {
-		display: inline-block;
-		float: right;
-	}
+	text-align: left;
 	a {
-		padding: 0 10px;
+		color: white;
+		padding: 5px 20px 5px 20px;
+		border-radius: 3px;
 		text-transform: uppercase;
+		position: relative;
+		transition: all 0.2s ease-out;
+		left:0;
+		&:after{
+			content: '→';
+			font-family: "Playfair Display";
+			opacity: 0;
+			transition: all 0.2s ease-out;
+			position: relative;
+			right: 10px;
+		}
+		&:hover{
+			left: -10px;
+			color: white;
+			padding: 5px 20px 5px 10px;
+			margin-left: 10px;
+			font-weight: 300;
+			background: $color__primary;
+		}
+		&:hover:after{
+			opacity: 1;
+			color: white;
+			right: -10px;
+		}
+	}
+	li.menu-item {
+		display: inline-block;
+		float: left;
+		margin: 0 10px;
 	}
 
 	ul {
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		position: absolute;
-		top: 1.5em;
+		top: 0.4em;
 		left: -999em;
 		z-index: 99999;
 
@@ -64,6 +154,8 @@ ul#menu-main-menu {
 		left: auto;
 	}
 }
+
+
 
 
 #sticker {
@@ -107,7 +199,7 @@ ul#menu-main-menu {
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0 0 0.4em;
 		overflow: hidden;
 	}
 

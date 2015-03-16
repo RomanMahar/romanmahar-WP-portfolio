@@ -18,10 +18,69 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+	padding: 5px 80px 5px 5px;
 }
 
-textarea {
-	padding-left: 3px;
-	width: 100%;
+.contactFieldContainer {
+	position: relative;
+	label{
+		background:$color__text-input;
+		color: $color__input-bg;
+		border-radius: 2px;
+		border-radius: 2px;
+		position: absolute;
+		width: 60px;
+		right: 6px;
+		top: 31px;
+		padding: 1px 5px;
+		z-index: 999;
+		font-family: "Playfair Display";
+		font-style: italic;
+		font-size: 0.8em;
+		font-weight: 700;
+		transition: opacity 0.4s;
+	}
 }
+
+.contactField {
+	font-family: "Lato";
+	font-size: 1em;
+	font-weight: 300;
+	background: $color__input-bg;
+	transition: all 0.3s;
+	&:focus{
+		outline: none;
+		box-shadow: 0 0 0 0.5px #fff;
+	}
+}
+.contactFieldContainer {
+	textarea {
+		padding: 5px 10px;
+		width: 100%;
+		min-height: 120px;
+	}
+}
+
+.wpcf7-response-output.wpcf7-validation-errors{
+	color:white;
+	font-family: "Playfair Display";
+	display: inline-block;
+	float: left;
+	border:none;
+	font-style: italic;
+	font-weight: 300;
+	transition: all 0.3s;
+	font-size: 0.7em;
+	letter-spacing: 0.06em;
+	width: 60%;
+	margin-top: 1em;
+}
+
+span.wpcf7-not-valid-tip {
+	font-family: "Playfair Display", "Serif";
+	font-style: italic;
+	margin-left: 5px;
+	font-size: 0.8em !important;
+	color: $color__text-input !important;
+}
+

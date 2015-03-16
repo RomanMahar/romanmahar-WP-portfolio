@@ -1,0 +1,34 @@
+p.nav-previous,
+p.nav-next{
+	border-radius: 50%;
+	font-family: "Playfair Display";
+	font-style: italic;
+	width: 50px;
+	height: 100px;
+	background:black;
+	position: relative;
+	text-align: center;
+	&:hover{
+		a{
+		color: $color__link-hover;
+		}
+	}
+	a {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-60%) translateX(-50%);
+		color: white;
+	}
+	span {
+		display: block;
+	}
+	span.arrow {
+		font-family: "Lato", "Sans serif";
+		font-style: normal;
+	}
+	span.navTitle {
+		line-height: 1;
+	}
+
+}

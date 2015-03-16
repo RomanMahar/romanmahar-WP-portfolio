@@ -29,6 +29,8 @@
       'container' => false,
       'theme_locations' => 'primary'
     )); ?>
+
   </div> <!-- /.container -->
 </header><!--/.header-->
+<span class="headerBG"></span>
 
