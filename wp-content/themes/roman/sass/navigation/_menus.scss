@@ -43,7 +43,7 @@ header.scrollin{
 	padding: 10px 0 0 0;
 	margin: 0;
 	animation: headerShift 0.4s;
-	top: 0;
+	top: -30px;
 	background: rgba(255,255,255,1);
 	border-bottom: 1px solid $color__primary;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
@@ -64,8 +64,10 @@ header.scrollin{
 			margin-bottom: 5px;
 			a{
 				color: $color__primary;
+				font-size: 0.9em;
 				&:hover{
 					color: white;
+					background: $color__primary;
 				}
 			}
 		}
@@ -74,7 +76,7 @@ header.scrollin{
 
 @keyframes headerShift {
   0%   { top: 20px; }
-  100% { top: 0px;}
+  100% { top: -30px;}
 }
 
 
@@ -91,8 +93,9 @@ ul#menu-main-menu {
 		border-radius: 3px;
 		text-transform: uppercase;
 		position: relative;
-		transition: all 0.2s ease-out;
+		transition: all 0.2s;
 		left:0;
+		letter-spacing: 0.065em;
 		&:after{
 			content: '→';
 			font-family: "Playfair Display";
@@ -107,7 +110,6 @@ ul#menu-main-menu {
 			padding: 5px 20px 5px 10px;
 			margin-left: 10px;
 			font-weight: 300;
-			background: $color__primary;
 		}
 		&:hover:after{
 			opacity: 1;

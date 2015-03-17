@@ -1,4 +1,4 @@
-<footer>
+<footer class="siteFooter">
   <div class="container">
     <div id="footer-sidebar" class="secondary clearfix">
 	    <div id="footer-sidebar1">
@@ -17,6 +17,7 @@
 		    ?>
 	    </div>
 	    <div id="footer-sidebar3">
+	    <span id="contact"></span>
 		    <?php
 		    if(is_active_sidebar('footer-sidebar-3')){
 		    dynamic_sidebar('footer-sidebar-3');

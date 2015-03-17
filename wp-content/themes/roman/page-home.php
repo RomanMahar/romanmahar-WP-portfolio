@@ -8,7 +8,7 @@ get_header();  ?>
 <main class="hero">
     <img src="<?php echo get_bloginfo('template_url') ?>/images/bg7.jpg" alt="">
     <h2 class="heroHeading">
-        Designer, Developer, Consultant
+        Designer, Developer, Creative
     </h2>
 </main>
 <div class="wrapper">
@@ -18,7 +18,6 @@ get_header();  ?>
         <?php // Start the loop ?>
         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     	
-          <h2><?php the_title(); ?></h2>
           <?php the_content(); ?>
 
         <?php endwhile; // end the loop?>
@@ -26,7 +25,8 @@ get_header();  ?>
 
 
         <?php $aboutMe = new WP_Query(array(
-            'post_type' => 'page', 
+            'post_type' => 'page',
+            'posts_per_page' => 1
         )); ?> 
 
         <?php if($aboutMe->have_posts()) while($aboutMe->have_posts()) : $aboutMe->the_post(); ?>
@@ -44,7 +44,7 @@ get_header();  ?>
 
         <?php if($latestPosts->have_posts()) while($latestPosts->have_posts()) : $latestPosts->the_post(); ?>
         	<div class="featuredPost">
-        		<h2><?php the_title(); ?></h2>
+        		<h4><?php the_title(); ?></h4>
         		<?php // include('author.php') include is a function to take not e of... it will inject the file?> 
         		<?php the_excerpt(); ?>
         	</div>

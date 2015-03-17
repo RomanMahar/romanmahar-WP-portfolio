@@ -28,18 +28,20 @@ dd {
 ul.taxonomyList {
 	list-style: none;
 	text-align: center;
+	margin: 0;
+	float: left;
+	width: 10%;
 	li{
 		padding: 15px 0;
 	}
 	span {
 		display: block;
 	}
+
 	// TAXONOMY IMAGES
-
 	img {
-		width: 80px;
+		width: 50px;
 	}
-
 	a {
 		transition: all 0.25s;
 		filter:  grayscale(1) brightness(5);

@@ -8,7 +8,9 @@ $color__background-ins: #fff9c0;
 
 $color__primary: #222;
 
-$color__input-bg: #111;
+$color__primary-darker: #111;
+
+$color__input-bg: $color__primary-darker;
 
 $color__text-screen: #21759b;
 $color__text-input: rgba(255,255,255,0.75);

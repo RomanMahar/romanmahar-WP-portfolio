@@ -12,7 +12,7 @@ function theme_setup() {
 	*  sizes with add_image_size. */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(120, 90, true);
-	add_image_size('square', 150, 150, true);
+	add_image_size('square', 180, 180, true);
 	add_image_size('spotlight', 400, 400, true);
 
 

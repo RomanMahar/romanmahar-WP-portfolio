@@ -182,7 +182,7 @@ body, button, input, select, textarea {
   font-family: sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.66; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
@@ -194,7 +194,7 @@ h1 {
 h1, h2 {
   text-transform: uppercase;
   font-family: "Lato";
-  letter-spacing: 0.055em; }
+  letter-spacing: 0.065em; }
 
 h2 {
   font-size: 3em;
@@ -315,13 +315,16 @@ dd {
 
 ul.taxonomyList {
   list-style: none;
-  text-align: center; }
+  text-align: center;
+  margin: 0;
+  float: left;
+  width: 10%; }
   ul.taxonomyList li {
     padding: 15px 0; }
   ul.taxonomyList span {
     display: block; }
   ul.taxonomyList img {
-    width: 80px; }
+    width: 50px; }
   ul.taxonomyList a {
     -webkit-transition: all 0.25s;
             transition: all 0.25s;
@@ -351,7 +354,7 @@ table {
 .flex-container {
   padding: 0;
   margin: 0;
-  width: 60%;
+  width: 100%;
   list-style: none;
   text-align: left;
   display: -webkit-box;
@@ -365,8 +368,7 @@ table {
           justify-content: flex-start; }
 
 .flex-item {
-  padding: 0;
-  width: 200px;
+  padding: 0 15px 0 0;
   margin-top: 20px;
   font-weight: bold; }
 
@@ -423,16 +425,6 @@ body .timeline a:active, body .timeline a:hover {
 
 #twitter-widget-0 .var-narrow .tweet {
   padding: 0; }
-
-div.images {
-  width: 50%;
-  margin: 0;
-  text-align: center; }
-
-figure.image {
-  width: 40%;
-  display: inline-block;
-  float: left; }
 
 /*--------------------------------------------------------------
 4.0 Forms
@@ -600,7 +592,7 @@ header.scrollin {
   margin: 0;
   -webkit-animation: headerShift 0.4s;
           animation: headerShift 0.4s;
-  top: 0;
+  top: -30px;
   background: white;
   border-bottom: 1px solid #222;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
@@ -619,23 +611,25 @@ header.scrollin {
       padding-top: 5px;
       margin-bottom: 5px; }
       header.scrollin .headerContainer ul#menu-main-menu a {
-        color: #222; }
+        color: #222;
+        font-size: 0.9em; }
         header.scrollin .headerContainer ul#menu-main-menu a:hover {
-          color: white; }
+          color: white;
+          background: #222; }
 
 @-webkit-keyframes headerShift {
   0% {
     top: 20px; }
 
   100% {
-    top: 0px; } }
+    top: -30px; } }
 
 @keyframes headerShift {
   0% {
     top: 20px; }
 
   100% {
-    top: 0px; } }
+    top: -30px; } }
 
 ul#menu-main-menu {
   padding-top: 25px;
@@ -649,9 +643,10 @@ ul#menu-main-menu {
     border-radius: 3px;
     text-transform: uppercase;
     position: relative;
-    -webkit-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
-    left: 0; }
+    -webkit-transition: all 0.2s;
+            transition: all 0.2s;
+    left: 0;
+    letter-spacing: 0.065em; }
     ul#menu-main-menu a:after {
       content: '→';
       font-family: "Playfair Display";
@@ -665,8 +660,7 @@ ul#menu-main-menu {
       color: white;
       padding: 5px 20px 5px 10px;
       margin-left: 10px;
-      font-weight: 300;
-      background: #222; }
+      font-weight: 300; }
     ul#menu-main-menu a:hover:after {
       opacity: 1;
       color: white;
@@ -746,30 +740,39 @@ ul#menu-main-menu {
 /*--------------------------------------------------------------
 5.4 nav-arrows
 --------------------------------------------------------------*/
+#nav-below {
+  width: 100%;
+  margin: 50px 0; }
+
+.nav-previous {
+  float: left; }
+
+.nav-next {
+  float: left; }
+
 p.nav-previous, p.nav-next {
-  border-radius: 50%;
-  font-family: "Playfair Display";
-  font-style: italic;
-  width: 50px;
-  height: 100px;
-  background: black;
-  position: relative;
-  text-align: center; }
-  p.nav-previous:hover a, p.nav-next:hover a {
-    color: #EC1D25; }
+  line-height: 1;
+  margin: 0;
+  padding: 10px 30px;
+  font-family: "Lato";
+  text-transform: uppercase;
+  font-size: 1.7em;
+  background: #ccc;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+  color: #fff; }
+  p.nav-previous:hover, p.nav-next:hover {
+    background-color: #222; }
   p.nav-previous a, p.nav-next a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateY(-60%) translateX(-50%);
-        -ms-transform: translateY(-60%) translateX(-50%);
-            transform: translateY(-60%) translateX(-50%);
-    color: white; }
+    color: #fff; }
   p.nav-previous span, p.nav-next span {
     display: block; }
   p.nav-previous span.arrow, p.nav-next span.arrow {
     font-family: "Lato", "Sans serif";
-    font-style: normal; }
+    font-style: normal;
+    color: #fff;
+    font-size: 2em; }
   p.nav-previous span.navTitle, p.nav-next span.navTitle {
     line-height: 1; }
 
@@ -893,7 +896,7 @@ p.nav-previous, p.nav-next {
   padding: 250px 0 0 0;
   margin-bottom: -200px; }
   .hero h2 {
-    margin: 0 auto;
+    margin: 10% auto;
     text-align: center;
     color: white; }
   .hero img {
@@ -906,15 +909,17 @@ p.nav-previous, p.nav-next {
 /*--------------------------------------------------------------
 10.5 Footer Page
 --------------------------------------------------------------*/
-footer {
+footer.siteFooter {
   background: #222; }
-  footer h3 {
+  footer.siteFooter h3 {
     color: white; }
 
 #footer-sidebar {
   display: block;
   color: white;
-  padding: 5%; }
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; }
 
 #footer-sidebar1 {
   float: left;
@@ -935,6 +940,40 @@ footer {
 
 .contactField {
   width: 100%; }
+
+/*--------------------------------------------------------------
+10.6 portfolio Page
+--------------------------------------------------------------*/
+.postInfo {
+  width: 50%;
+  display: inline-block; }
+
+.post {
+  width: 100%; }
+
+div.images {
+  width: 50%;
+  margin: 0;
+  text-align: center; }
+
+figure.image {
+  width: 40%;
+  display: inline-block;
+  float: left; }
+
+.gallery {
+  float: left;
+  width: 50%; }
+
+#spotlightImage {
+  width: 100%;
+  max-width: 600px;
+  max-height: 400px; }
+
+.portfolioPostContent {
+  width: 40%;
+  padding: 0 2.5%;
+  float: left; }
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
@@ -1012,4 +1051,56 @@ embed, iframe, object {
 SMARTTIPS
 --------------------------------------------------------------*/
 .smartTip {
-  text-transform: none; }
+  text-transform: none;
+  font-weight: 700; }
+
+.smartTip {
+  position: relative;
+  color: #1c2a43;
+  cursor: pointer;
+  -webkit-transition: color 0.45s;
+  transition: color 0.45s; }
+
+.smartTip:hover {
+  color: #EC1D25; }
+
+.tooltip {
+  position: absolute;
+  padding: 15px;
+  bottom: 150%;
+  left: 50%;
+  min-width: 260px;
+  z-index: 200;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  border: 4px solid transparent;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  font-weight: normal; }
+
+.tooltip:after, .tooltip:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none; }
+
+.tooltip:after {
+  border-color: transparent;
+  border-top-color: #222;
+  border-width: 10px;
+  margin-left: -10px; }
+
+.tooltip:before {
+  border-color: transparent;
+  border-top-color: transparent;
+  border-width: 12px;
+  margin-left: -12px; }
